@@ -18,7 +18,7 @@ Standard fine-tuning easily updates a model's knowledge, but **removing** knowle
 
 ## Technical Stack & Frameworks
 
-* **Base Models:** LLaMA-2 / Pythia (Fine-tuned on fictitious author profiles)
+* **Base Models:** LLaMA-2  (Fine-tuned on fictitious author profiles)
 * **Dataset:** TOFU (Task of Fictitious Unlearning) — 200 fictitious author profiles consisting of QA pairs to strictly control and isolate the target forget-set.
 * **Libraries:** PyTorch, Hugging Face (Transformers, PEFT, Accelerate)
 * **Compute Environment:** High-Performance Computing (HPC) Slurm Cluster
@@ -29,7 +29,7 @@ This repository explores and compares multiple foundational approaches to machin
 
 1. **Gradient Ascent (GA):** Maximizes the loss on the forget-set to forcefully erase the target knowledge.
 2. **Gradient Ascent with Random Labeling:** Instead of just increasing loss, this forces the model to map forget-set queries to completely random tokens.
-3. **Kullback-Leibler (KL) Divergence Regularization:** Pairs Gradient Ascent on the forget-set with a regularizer that minimizes the drift between the unlearned model and the original fine-tuned model on the retain-set.
+3. **KL Divergence Regularization:** Pairs Gradient Ascent on the forget-set with a regularizer that minimizes the drift between the unlearned model and the original fine-tuned model on the retain-set.
 
 ## Evaluation Metrics
 
